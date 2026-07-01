@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jimmy Services — Daily Operations Dashboard</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #e6b800;
+      --dark: #0f0f0f;
+      --dark2: #1a1a1a;
+      --green: #22c55e;
+      --red: #ef4444;
+      --blue: #3b82f6;
+    }
+    body { font-family: 'Inter', sans-serif; background: #f0f0f0; color: #111; }
+
+    /* HEADER */
+    .db-header { background: var(--dark); padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .db-logo { font-size: 1.2rem; font-weight: 900; color: #fff; letter-spacing: 0.05em; }
+    .db-logo span { color: var(--gold); }
+    .db-date { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+    .db-call { background: var(--gold); color: #000; font-weight: 700; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; }
+
+    /* LAYOUT */
+    .db-wrap { max-width: 1200px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .db-card { background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .db-card.full { grid-column: 1 / -1; }
+    .db-card.half { grid-column: span 2; }
+    .db-card h3 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 1rem; }
+
+    /* STAT CARDS */
+    .db-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; grid-column: 1 / -1; }
+    .db-stat { background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .db-stat-num { font-size: 2rem; font-weight: 900; line-height: 1; margin-bottom: 0.25rem; }
+    .db-stat-label { font-size: 0.8rem; color: #888; font-weight: 500; }
+    .db-stat.gold .db-stat-num { color: var(--gold); }
+    .db-stat.green .db-stat-num { color: var(--green); }
+    .db-stat.blue .db-stat-num { color: var(--blue); }
+    .db-stat.red .db-stat-num { color: var(--red); }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; }
+    .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
+    .checklist li:last-child { border: none; }
+    .checklist input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--gold); cursor: pointer; flex-shrink: 0; margin-top: 1px; }
+    .checklist label { cursor: pointer; line-height: 1.4; }
+    .checklist input:checked + label { text-decoration: line-through; color: #aaa; }
+    .cl-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-left: 6px; text-transform: uppercase; vertical-align: middle; }
+    .cl-tag.morning { background: #fef3c7; color: #92400e; }
+    .cl-tag.daily { background: #dbeafe; color: #1e40af; }
+    .cl-tag.evening { background: #f3e8ff; color: #6b21a8; }
+
+    /* QUICK LINKS */
+    .ql-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .ql-link { display: flex; align-items: center; gap: 10px; padding: 12px; background: #f8f8f8; border-radius: 8px; text-decoration: none; color: #111; font-size: 0.88rem; font-weight: 600; transition: background 0.15s; border: 1px solid #eee; }
+    .ql-link:hover { background: #f0f0f0; }
+    .ql-icon { font-size: 1.3rem; width: 32px; text-align: center; }
+    .ql-link small { display: block; font-weight: 400; color: #888; font-size: 0.75rem; }
+
+    /* REVENUE TRACKER */
+    .rev-input-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .rev-input-row input, .rev-input-row select { flex: 1; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 0.88rem; }
+    .rev-input-row button { background: var(--gold); border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; font-family: inherit; white-space: nowrap; }
+    .rev-list { list-style: none; max-height: 220px; overflow-y: auto; }
+    .rev-list li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.88rem; }
+    .rev-list li:last-child { border: none; }
+    .rev-amount { font-weight: 700; color: var(--green); }
+    .rev-delete { background: none; border: none; color: #ccc; cursor: pointer; font-size: 1rem; padding: 0 4px; }
+    .rev-delete:hover { color: var(--red); }
+    .rev-total { display: flex; justify-content: space-between; align-items: center; padding: 12px 0 0; border-top: 2px solid #111; font-weight: 800; font-size: 1.05rem; margin-top: 0.5rem; }
+
+    /* CUSTOMER LOG */
+    .cust-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; }
+    .cust-form input, .cust-form select { padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 0.85rem; }
+    .cust-form button { grid-column: 1 / -1; background: var(--dark); color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .cust-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .cust-table th { text-align: left; padding: 6px 8px; background: #f8f8f8; color: #666; font-weight: 600; border-bottom: 1px solid #eee; }
+    .cust-table td { padding: 8px; border-bottom: 1px solid #f5f5f5; vertical-align: middle; }
+    .cust-table tr:last-child td { border: none; }
+    .status-badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; }
+    .status-new { background: #dbeafe; color: #1d4ed8; }
+    .status-scheduled { background: #fef3c7; color: #92400e; }
+    .status-done { background: #dcfce7; color: #166534; }
+    .status-followup { background: #fce7f3; color: #9d174d; }
+    .cust-del { background: none; border: none; color: #ddd; cursor: pointer; }
+    .cust-del:hover { color: var(--red); }
+
+    /* NOTES */
+    .db-notes { width: 100%; min-height: 120px; border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-family: inherit; font-size: 0.88rem; resize: vertical; }
+
+    /* HOW TO */
+    .howto { list-style: none; counter-reset: steps; }
+    .howto li { counter-increment: steps; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.88rem; line-height: 1.5; }
+    .howto li:last-child { border: none; }
+    .howto li::before { content: counter(steps); background: var(--gold); color: #000; font-weight: 900; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+
+    /* FOOTER */
+    .db-footer { text-align: center; padding: 1.5rem; color: #aaa; font-size: 0.8rem; }
+
+    @media (max-width: 900px) {
+      .db-wrap { grid-template-columns: 1fr; }
+      .db-stats { grid-template-columns: 1fr 1fr; }
+      .db-card.half { grid-column: span 1; }
+      .ql-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="db-header">
+  <div class="db-logo">JIMMY<span>SERVICES</span> <span style="color:rgba(255,255,255,0.3);font-weight:400;font-size:0.9rem;">· Daily Dashboard</span></div>
+  <div class="db-date" id="db-date"></div>
+  <a href="tel:+18032217013" class="db-call">📞 (803) 221-7013</a>
+</div>
+
+<div class="db-wrap">
+
+  <!-- STAT CARDS -->
+  <div class="db-stats">
+    <div class="db-stat gold">
+      <div class="db-stat-num" id="stat-revenue">$0</div>
+      <div class="db-stat-label">Revenue Today</div>
+    </div>
+    <div class="db-stat green">
+      <div class="db-stat-num" id="stat-jobs">0</div>
+      <div class="db-stat-label">Jobs Logged Today</div>
+    </div>
+    <div class="db-stat blue">
+      <div class="db-stat-num" id="stat-customers">0</div>
+      <div class="db-stat-label">Total Customers</div>
+    </div>
+    <div class="db-stat red">
+      <div class="db-stat-num" id="stat-followup">0</div>
+      <div class="db-stat-label">Need Follow-Up</div>
+    </div>
+  </div>
+
+  <!-- DAILY CHECKLIST -->
+  <div class="db-card">
+    <h3>☀️ Daily Checklist</h3>
+    <ul class="checklist" id="checklist">
+      <li><input type="checkbox" id="c1"><label for="c1">Check Calendly for new bookings <span class="cl-tag morning">Morning</span></label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">Check Stripe for overnight payments <span class="cl-tag morning">Morning</span></label></li>
+      <li><input type="checkbox" id="c3"><label for="c3">Call back any missed calls / voicemails <span class="cl-tag morning">Morning</span></label></li>
+      <li><input type="checkbox" id="c4"><label for="c4">Confirm today's appointments by text <span class="cl-tag morning">Morning</span></label></li>
+      <li><input type="checkbox" id="c5"><label for="c5">Log each completed job in revenue tracker below <span class="cl-tag daily">Daily</span></label></li>
+      <li><input type="checkbox" id="c6"><label for="c6">Text completed customers Google review link <span class="cl-tag daily">Daily</span></label></li>
+      <li><input type="checkbox" id="c7"><label for="c7">Update customer status below (New → Scheduled → Done) <span class="cl-tag daily">Daily</span></label></li>
+      <li><input type="checkbox" id="c8"><label for="c8">Follow up with any "Need Follow-Up" customers <span class="cl-tag daily">Daily</span></label></li>
+      <li><input type="checkbox" id="c9"><label for="c9">Check Google Business Profile for new reviews <span class="cl-tag evening">Evening</span></label></li>
+      <li><input type="checkbox" id="c10"><label for="c10">Post a job photo to Google Business or Facebook <span class="cl-tag evening">Evening</span></label></li>
+    </ul>
+    <button onclick="resetChecklist()" style="margin-top:1rem;background:none;border:1px solid #ddd;padding:6px 12px;border-radius:6px;font-size:0.8rem;cursor:pointer;color:#888;">Reset for tomorrow</button>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="db-card">
+    <h3>🔗 Quick Links</h3>
+    <div class="ql-grid">
+      <a class="ql-link" href="https://calendly.com/event_types/user/me" target="_blank">
+        <span class="ql-icon">📅</span><div>Calendly<small>View & manage bookings</small></div>
+      </a>
+      <a class="ql-link" href="https://dashboard.stripe.com/payments" target="_blank">
+        <span class="ql-icon">💳</span><div>Stripe Payments<small>View all transactions</small></div>
+      </a>
+      <a class="ql-link" href="https://business.google.com" target="_blank">
+        <span class="ql-icon">📍</span><div>Google Business<small>Reviews & profile</small></div>
+      </a>
+      <a class="ql-link" href="https://search.google.com/search-console" target="_blank">
+        <span class="ql-icon">📈</span><div>Search Console<small>Google ranking & traffic</small></div>
+      </a>
+      <a class="ql-link" href="https://jimmyservice.com" target="_blank">
+        <span class="ql-icon">🌐</span><div>Your Website<small>jimmyservice.com</small></div>
+      </a>
+      <a class="ql-link" href="https://github.com/phillipstokes90/jimmyservices" target="_blank">
+        <span class="ql-icon">⚙️</span><div>GitHub Repo<small>Site source code</small></div>
+      </a>
+      <a class="ql-link" href="https://vercel.com/phillipstokes90-3941s-projects/jimmyservices" target="_blank">
+        <span class="ql-icon">🚀</span><div>Vercel<small>Hosting & deployments</small></div>
+      </a>
+      <a class="ql-link" href="mailto:david.mccotter@yahoo.com" target="_blank">
+        <span class="ql-icon">✉️</span><div>Email<small>david.mccotter@yahoo.com</small></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- REVENUE TRACKER -->
+  <div class="db-card">
+    <h3>💰 Today's Revenue Tracker</h3>
+    <div class="rev-input-row">
+      <input type="text" id="rev-service" placeholder="Service (e.g. HVAC Repair)" />
+      <input type="number" id="rev-amount" placeholder="$" min="0" />
+      <button onclick="addRevenue()">Add</button>
+    </div>
+    <ul class="rev-list" id="rev-list"></ul>
+    <div class="rev-total"><span>Today's Total</span><span id="rev-total-num" style="color:var(--green)">$0</span></div>
+  </div>
+
+  <!-- CUSTOMER LOG -->
+  <div class="db-card half">
+    <h3>👥 Customer Log</h3>
+    <div class="cust-form">
+      <input type="text" id="cust-name" placeholder="Customer Name" />
+      <input type="tel" id="cust-phone" placeholder="Phone Number" />
+      <input type="text" id="cust-service" placeholder="Service Needed" />
+      <select id="cust-status">
+        <option value="new">🔵 New Lead</option>
+        <option value="scheduled">🟡 Scheduled</option>
+        <option value="done">🟢 Job Done</option>
+        <option value="followup">🔴 Follow-Up Needed</option>
+      </select>
+      <button onclick="addCustomer()">+ Add Customer</button>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="cust-table">
+        <thead>
+          <tr><th>Name</th><th>Phone</th><th>Service</th><th>Status</th><th>Added</th><th></th></tr>
+        </thead>
+        <tbody id="cust-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="db-card">
+    <h3>📝 Today's Notes</h3>
+    <textarea class="db-notes" id="db-notes" placeholder="Parts to order, follow-up calls, job notes, anything David needs to remember..."></textarea>
+    <button onclick="saveNotes()" style="margin-top:0.75rem;background:var(--dark);color:#fff;border:none;padding:8px 16px;border-radius:6px;font-weight:700;cursor:pointer;width:100%;">Save Notes</button>
+    <p id="notes-saved" style="font-size:0.75rem;color:var(--green);margin-top:0.5rem;display:none;">✅ Saved</p>
+  </div>
+
+  <!-- HOW TO GET REVIEWS -->
+  <div class="db-card">
+    <h3>⭐ How to Get Google Reviews (Do This Daily)</h3>
+    <ol class="howto">
+      <li>Finish a job and customer is happy</li>
+      <li>Text them: <em>"Thanks for choosing Jimmy Services! If you have 60 seconds, a Google review helps us a ton: <strong>g.page/r/[YOUR-LINK]/review</strong>"</em></li>
+      <li>Go to Google Business Profile → get your review link</li>
+      <li>Save it in your phone as a text shortcut</li>
+      <li>Every 5 reviews = better Google ranking = more calls</li>
+    </ol>
+  </div>
+
+  <!-- HOW TO MANAGE PAYMENTS -->
+  <div class="db-card">
+    <h3>💳 Payment Flow — How It Works</h3>
+    <ol class="howto">
+      <li>Customer books via Calendly (free, no payment)</li>
+      <li>David confirms job and gives verbal quote</li>
+      <li>For standard services — send Stripe payment link via text before or after job</li>
+      <li>Customer pays on their phone in 30 seconds</li>
+      <li>Money deposits to David's bank in 2 business days</li>
+      <li>Log the job in revenue tracker above</li>
+    </ol>
+  </div>
+
+  <!-- GOOGLE SETUP STEPS -->
+  <div class="db-card full">
+    <h3>🚀 One-Time Setup Remaining — Do These to Rank on Google</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:0.5rem;">
+      <div style="background:#f8f8f8;border-radius:8px;padding:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">📅</div>
+        <strong style="font-size:0.9rem;">1. Set Up Calendly</strong>
+        <p style="font-size:0.8rem;color:#666;margin-top:0.25rem;">Go to calendly.com → sign up free → create "Book a Job" event → set your available hours → copy your link and send to Claude to wire into the site.</p>
+      </div>
+      <div style="background:#f8f8f8;border-radius:8px;padding:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">📍</div>
+        <strong style="font-size:0.9rem;">2. Google Business Profile</strong>
+        <p style="font-size:0.8rem;color:#666;margin-top:0.25rem;">Go to business.google.com → add Jimmy Services → hide your home address → set service areas → verify by postcard. This gets you on Google Maps.</p>
+      </div>
+      <div style="background:#f8f8f8;border-radius:8px;padding:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">📈</div>
+        <strong style="font-size:0.9rem;">3. Submit Sitemap to Google</strong>
+        <p style="font-size:0.8rem;color:#666;margin-top:0.25rem;">Go to Search Console → Sitemaps → enter sitemap.xml → Submit. Tells Google all 5 pages of your site exist and to index them.</p>
+      </div>
+      <div style="background:#f8f8f8;border-radius:8px;padding:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">💳</div>
+        <strong style="font-size:0.9rem;">4. Activate Stripe Live Mode</strong>
+        <p style="font-size:0.8rem;color:#666;margin-top:0.25rem;">Go to Stripe Dashboard → complete business verification → switch from Test to Live mode → recreate payment links in Live mode → send new links to Claude to update site.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="db-footer">Jimmy Services Daily Dashboard · For David McCotter's eyes only · <a href="https://jimmyservice.com" target="_blank">jimmyservice.com</a></div>
+
+<script>
+  // Date display
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const now = new Date();
+  document.getElementById('db-date').textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+
+  // ---- CHECKLIST ----
+  function loadChecklist() {
+    const today = new Date().toDateString();
+    const saved = JSON.parse(localStorage.getItem('checklist_' + today) || '{}');
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => {
+      if (saved[cb.id]) cb.checked = true;
+      cb.addEventListener('change', saveChecklist);
+    });
+  }
+  function saveChecklist() {
+    const today = new Date().toDateString();
+    const state = {};
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => { state[cb.id] = cb.checked; });
+    localStorage.setItem('checklist_' + today, JSON.stringify(state));
+  }
+  function resetChecklist() {
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => cb.checked = false);
+    saveChecklist();
+  }
+
+  // ---- REVENUE ----
+  let revenue = JSON.parse(localStorage.getItem('revenue_' + new Date().toDateString()) || '[]');
+  function renderRevenue() {
+    const list = document.getElementById('rev-list');
+    list.innerHTML = revenue.map((r, i) => `
+      <li>
+        <span>${r.service}</span>
+        <span><span class="rev-amount">$${r.amount}</span>
+        <button class="rev-delete" onclick="deleteRevenue(${i})">✕</button></span>
+      </li>`).join('');
+    const total = revenue.reduce((s, r) => s + Number(r.amount), 0);
+    document.getElementById('rev-total-num').textContent = '$' + total.toLocaleString();
+    document.getElementById('stat-revenue').textContent = '$' + total.toLocaleString();
+    document.getElementById('stat-jobs').textContent = revenue.length;
+  }
+  function addRevenue() {
+    const service = document.getElementById('rev-service').value.trim();
+    const amount = document.getElementById('rev-amount').value;
+    if (!service || !amount) return;
+    revenue.push({ service, amount });
+    localStorage.setItem('revenue_' + new Date().toDateString(), JSON.stringify(revenue));
+    document.getElementById('rev-service').value = '';
+    document.getElementById('rev-amount').value = '';
+    renderRevenue();
+  }
+  function deleteRevenue(i) {
+    revenue.splice(i, 1);
+    localStorage.setItem('revenue_' + new Date().toDateString(), JSON.stringify(revenue));
+    renderRevenue();
+  }
+
+  // ---- CUSTOMERS ----
+  let customers = JSON.parse(localStorage.getItem('js_customers') || '[]');
+  const statusLabels = { new: '<span class="status-badge status-new">New Lead</span>', scheduled: '<span class="status-badge status-scheduled">Scheduled</span>', done: '<span class="status-badge status-done">Done</span>', followup: '<span class="status-badge status-followup">Follow-Up</span>' };
+  function renderCustomers() {
+    const tbody = document.getElementById('cust-tbody');
+    tbody.innerHTML = customers.map((c, i) => `
+      <tr>
+        <td><strong>${c.name}</strong></td>
+        <td><a href="tel:${c.phone}" style="color:inherit;">${c.phone}</a></td>
+        <td>${c.service}</td>
+        <td>${statusLabels[c.status]}</td>
+        <td style="color:#aaa;font-size:0.78rem;">${c.date}</td>
+        <td><button class="cust-del" onclick="deleteCustomer(${i})">✕</button></td>
+      </tr>`).join('') || '<tr><td colspan="6" style="text-align:center;color:#aaa;padding:1rem;font-size:0.85rem;">No customers yet — add your first one above</td></tr>';
+    document.getElementById('stat-customers').textContent = customers.length;
+    document.getElementById('stat-followup').textContent = customers.filter(c => c.status === 'followup').length;
+  }
+  function addCustomer() {
+    const name = document.getElementById('cust-name').value.trim();
+    const phone = document.getElementById('cust-phone').value.trim();
+    const service = document.getElementById('cust-service').value.trim();
+    const status = document.getElementById('cust-status').value;
+    if (!name || !phone) return alert('Name and phone are required.');
+    customers.unshift({ name, phone, service, status, date: new Date().toLocaleDateString() });
+    localStorage.setItem('js_customers', JSON.stringify(customers));
+    ['cust-name','cust-phone','cust-service'].forEach(id => document.getElementById(id).value = '');
+    renderCustomers();
+  }
+  function deleteCustomer(i) {
+    if (!confirm('Remove this customer?')) return;
+    customers.splice(i, 1);
+    localStorage.setItem('js_customers', JSON.stringify(customers));
+    renderCustomers();
+  }
+
+  // ---- NOTES ----
+  function loadNotes() {
+    const today = new Date().toDateString();
+    document.getElementById('db-notes').value = localStorage.getItem('notes_' + today) || '';
+  }
+  function saveNotes() {
+    const today = new Date().toDateString();
+    localStorage.setItem('notes_' + today, document.getElementById('db-notes').value);
+    const msg = document.getElementById('notes-saved');
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2000);
+  }
+
+  // Init
+  loadChecklist();
+  loadNotes();
+  renderRevenue();
+  renderCustomers();
+</script>
+</body>
+</html>
