@@ -68,6 +68,22 @@
 </head>
 <body>
 
+  <!-- STICKY TOP BAR -->
+  <div class="sticky-bar" id="sticky-bar">
+    <div class="sticky-bar-inner">
+      <span>🔥 <strong>Same-Day Service Available</strong> — Philadelphia's #1 Family Contractor</span>
+      <div class="sticky-bar-ctas">
+        <a href="tel:+18032217013" class="sticky-call">📞 Call Now</a>
+        <a href="#schedule" class="sticky-book">Book Online →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE FLOAT BUTTON -->
+  <a href="tel:+18032217013" class="mobile-float-btn" aria-label="Call Jimmy Services">
+    📞 <span>Call Now</span>
+  </a>
+
   <!-- NAV -->
   <nav id="navbar">
     <div class="container nav-inner">
@@ -829,6 +845,26 @@
     </div>
   </footer>
 
+  <!-- URGENCY POPUP -->
+  <div class="urgency-popup" id="urgency-popup">
+    <button class="urgency-popup-close" onclick="closePopup()">✕</button>
+    <h4>🔥 Limited Slots This Week</h4>
+    <p>Same-day appointments are filling up fast in Philadelphia. Book now to secure your spot.</p>
+    <a href="#schedule" onclick="closePopup()">Book a Job Today →</a>
+  </div>
+
   <script src="script.js"></script>
+  <script>
+    // Show popup after 8 seconds if not dismissed before
+    function closePopup() {
+      document.getElementById('urgency-popup').classList.remove('show');
+      sessionStorage.setItem('popup_dismissed', '1');
+    }
+    if (!sessionStorage.getItem('popup_dismissed')) {
+      setTimeout(() => {
+        document.getElementById('urgency-popup').classList.add('show');
+      }, 8000);
+    }
+  </script>
 </body>
 </html>

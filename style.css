@@ -301,3 +301,30 @@ textarea { resize: vertical; }
   text-align: center;
   line-height: 1.5;
 }
+
+/* ===== STICKY BAR ===== */
+.sticky-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: var(--dark); border-bottom: 2px solid var(--gold); padding: 10px 1.5rem; }
+.sticky-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.sticky-bar span { font-size: 0.88rem; color: rgba(255,255,255,0.9); }
+.sticky-bar strong { color: var(--gold); }
+.sticky-bar-ctas { display: flex; gap: 0.5rem; }
+.sticky-call { background: var(--gold); color: #000; font-weight: 700; padding: 7px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; white-space: nowrap; }
+.sticky-book { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); font-weight: 600; padding: 7px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; white-space: nowrap; }
+.sticky-book:hover { background: rgba(255,255,255,0.1); }
+body { padding-top: 46px; }
+
+/* ===== MOBILE FLOAT BUTTON ===== */
+.mobile-float-btn { display: none; position: fixed; bottom: 24px; right: 24px; z-index: 9998; background: var(--gold); color: #000; font-weight: 800; padding: 14px 22px; border-radius: 50px; text-decoration: none; font-size: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3); align-items: center; gap: 8px; }
+@media (max-width: 768px) {
+  .mobile-float-btn { display: flex; }
+  .sticky-bar-ctas .sticky-book { display: none; }
+}
+
+/* ===== URGENCY POPUP ===== */
+.urgency-popup { display: none; position: fixed; bottom: 24px; left: 24px; z-index: 9997; background: #fff; border-radius: 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 1.25rem 1.5rem; max-width: 300px; border-left: 4px solid var(--gold); animation: slideUp 0.4s ease; }
+.urgency-popup.show { display: block; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.urgency-popup-close { position: absolute; top: 10px; right: 12px; background: none; border: none; font-size: 1.1rem; cursor: pointer; color: #aaa; }
+.urgency-popup h4 { font-size: 1rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--dark); }
+.urgency-popup p { font-size: 0.85rem; color: #555; margin-bottom: 1rem; line-height: 1.5; }
+.urgency-popup a { display: block; text-align: center; background: var(--gold); color: #000; font-weight: 700; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; }
