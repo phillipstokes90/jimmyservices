@@ -4,8 +4,8 @@
     {
       "name": "jimmyservices",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "3456", "."],
-      "port": 4567
+      "runtimeArgs": ["serve", "-l", "3456", "/Users/phillipstokes/Downloads/jimmyservices"],
+      "port": 3456
     }
   ]
 }
