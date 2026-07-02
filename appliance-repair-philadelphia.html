@@ -6,7 +6,8 @@
   <title>Appliance Repair Philadelphia PA | Same-Day | Jimmy Services</title>
   <meta name="description" content="Fridge, washer, dryer, oven not working? Jimmy Services repairs all major appliances in Philadelphia PA. $59 diagnostic. Same-day available. Call (803) 221-7013." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://jimmyservice.com/appliance-repair-philadelphia" />
+  <meta name="google-site-verification" content="N_kxR-XTdTbGt_gOEmPHeKf9IIF_7tyPon5Lat2CoCs" />
+  <link rel="canonical" href="https://jimmyservice.com/appliance-repair-philadelphia.html" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,10 +28,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="service-page.css" />
 </head>
 <body>
+
+  <div class="sticky-bar">
+    <div class="sticky-bar-inner">
+      <span><strong>$59 Appliance Diagnostic</strong> — Same-Day Available in Philadelphia</span>
+      <div class="sticky-bar-ctas">
+        <a href="tel:+18032217013" class="sticky-call">Call Now</a>
+        <a href="#book" class="sticky-book">Book Online</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="tel:+18032217013" class="mobile-float-btn" aria-label="Call Jimmy Services">Call Now</a>
 
   <nav id="navbar">
     <div class="container nav-inner">
@@ -38,228 +51,265 @@
       <ul class="nav-links">
         <li><a href="index.html#services">All Services</a></li>
         <li><a href="index.html#plans">Pricing</a></li>
-        <li><a href="index.html#about">About Us</a></li>
         <li><a href="index.html#areas">Service Areas</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
       </ul>
-      <a href="tel:+18032217013" class="btn-call-nav">📞 (803) 221-7013</a>
+      <a href="tel:+18032217013" class="btn-call-nav">(803) 221-7013</a>
       <button class="hamburger" id="hamburger">&#9776;</button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
       <a href="index.html">Home</a>
-      <a href="index.html#services">All Services</a>
-      <a href="tel:+18032217013" class="mc-call">📞 (803) 221-7013</a>
+      <a href="index.html#services" onclick="closeMobile()">All Services</a>
+      <a href="#book" onclick="closeMobile()">Book Online</a>
+      <a href="tel:+18032217013" class="mc-call">(803) 221-7013</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="sp-hero">
-    <div class="sp-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&fit=crop&auto=format')"></div>
-    <div class="sp-hero-overlay"></div>
-    <div class="container sp-hero-content">
-      <div class="sp-hero-text">
-        <div class="sp-breadcrumb"><a href="index.html">Jimmy Services</a> › Appliance Repair Philadelphia</div>
-        <div class="sp-tag">🔧 Appliance Repair · Philadelphia, PA</div>
-        <h1>Before You Spend $1,200 on a New Fridge —<br/>Call Us First.</h1>
-        <p>Most broken appliances cost $150–$350 to fix. A new one costs $800–$2,000. We show up same day, diagnose it for $59, and tell you the honest truth about whether to repair or replace.</p>
-        <div class="sp-hero-ctas">
-          <a href="tel:+18032217013" class="sp-cta-primary">
-            <span>📞</span>
-            <div><strong>(803) 221-7013</strong><small>Call Now — $59 Diagnostic</small></div>
-          </a>
-          <a href="#book" class="sp-cta-secondary">Book Online →</a>
-        </div>
-        <div class="sp-trust-row">
-          <span>✅ All Major Brands</span>
-          <span>⭐ 5-Star Rated</span>
-          <span>🏠 In-Home Service</span>
-          <span>💰 Save vs. Replacing</span>
-        </div>
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=1400&fit=crop&auto=format&q=80')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Appliance Repair &nbsp;&middot;&nbsp; Philadelphia, PA &nbsp;&middot;&nbsp; $59 Diagnostic</div>
+      <h1>Before You Spend $1,200<br/>on a New Fridge &mdash;<br/><em>Call Us First.</em></h1>
+      <p>Most broken appliances cost $150&ndash;$350 to fix. A new one costs $800&ndash;$2,000. We show up same day, diagnose it for $59, and give you the honest truth about whether to repair or replace.</p>
+      <div class="hero-ctas">
+        <a href="tel:+18032217013" class="cta-primary">Call (803) 221-7013</a>
+        <a href="#book" class="cta-secondary">Book $59 Diagnostic</a>
+      </div>
+      <div class="hero-trust">
+        <span><strong>All Major Brands</strong></span>
+        <span><strong>5-Star Rated</strong> &nbsp;&middot;&nbsp; 87 Reviews</span>
+        <span><strong>In-Home Service</strong></span>
+        <span><strong>Same-Day</strong> Available</span>
       </div>
     </div>
   </section>
 
-  <!-- URGENCY -->
-  <div class="sp-urgency">
-    <div class="container">🧊 <strong>Fridge down in Philadelphia?</strong> Food spoils fast. We answer same day. <a href="tel:+18032217013">Call (803) 221-7013 now.</a></div>
+  <div class="stats-bar">
+    <div class="stat-item"><strong>$59</strong><small>Flat Diagnostic</small></div>
+    <div class="stat-item"><strong>Same Day</strong><small>Service Available</small></div>
+    <div class="stat-item"><strong>All Brands</strong><small>Repaired</small></div>
+    <div class="stat-item"><strong>20+</strong><small>Years Experience</small></div>
   </div>
 
-  <!-- STATS -->
-  <div class="sp-stats">
+  <section class="section">
     <div class="container">
-      <div class="sp-stat"><span class="sp-stat-num">$59</span><span class="sp-stat-label">Flat Diagnostic</span></div>
-      <div class="sp-stat"><span class="sp-stat-num">Same Day</span><span class="sp-stat-label">Service Available</span></div>
-      <div class="sp-stat"><span class="sp-stat-num">All Brands</span><span class="sp-stat-label">Repaired</span></div>
-      <div class="sp-stat"><span class="sp-stat-num">20+ yrs</span><span class="sp-stat-label">Experience</span></div>
-    </div>
-  </div>
-
-  <!-- PAIN POINTS -->
-  <section class="sp-section">
-    <div class="container">
-      <div class="sp-kicker">Sound Familiar?</div>
-      <h2>Appliances That Break at the Worst Time</h2>
-      <div class="sp-pain-grid">
-        <div class="sp-pain">🧊<p>Fridge not cooling — food about to spoil</p></div>
-        <div class="sp-pain">🌊<p>Washer won't drain or is leaking water</p></div>
-        <div class="sp-pain">🔥<p>Dryer takes 2 cycles to dry one load</p></div>
-        <div class="sp-pain">🍳<p>Oven not heating or stove burner won't light</p></div>
-        <div class="sp-pain">🍽️<p>Dishwasher not cleaning or leaving standing water</p></div>
-        <div class="sp-pain">🧊<p>Ice maker stopped working</p></div>
-      </div>
-      <p class="sp-pain-note">These problems are almost always fixable — and almost always cheaper than buying new. We'll prove it for $59.</p>
-    </div>
-  </section>
-
-  <!-- APPLIANCES WE FIX -->
-  <section class="sp-section sp-dark">
-    <div class="container">
-      <div class="sp-kicker light">What We Repair</div>
-      <h2 class="light">Every Major Home Appliance. Every Major Brand.</h2>
-      <div class="sp-services-grid">
-        <div class="sp-service-item">
-          <h3>🧊 Refrigerators & Freezers</h3>
-          <p>Not cooling, compressor issues, ice maker failures, water dispenser problems, door seals. We fix all major brands including Samsung, LG, Whirlpool, GE, Frigidaire, Bosch.</p>
+      <div class="section-kicker">Sound Familiar?</div>
+      <h2 class="section-h2">Appliances That Break at the Worst Time</h2>
+      <p class="section-sub">These problems are almost always fixable — and almost always cheaper than buying new. We'll prove it for $59.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-temperature-minus" aria-hidden="true"></i></div>
+          <h3>Fridge Not Cooling</h3>
+          <p>Food about to spoil. Usually a fan motor, compressor issue, or dirty condenser coil — most fixable same day for under $250.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>🌊 Washers & Dryers</h3>
-          <p>Washer not draining, drum not spinning, leaks, error codes. Dryer not heating, overheating, drum noise. Front-load and top-load. All brands.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-droplet-off" aria-hidden="true"></i></div>
+          <h3>Washer Won't Drain</h3>
+          <p>Standing water in the drum, leaking onto the floor. Pump failure or clog — we carry the most common parts on the van.</p>
         </div>
-        <div class="sp-service-item sp-service-hot">
-          <div class="sp-hot-tag">💸 Biggest Savings</div>
-          <h3>🍳 Ovens & Ranges</h3>
-          <p>Gas or electric. Burner not lighting, oven not reaching temp, igniter failures, control board issues. A new range costs $700–$2,500. Most repairs are $100–$350.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-flame-off" aria-hidden="true"></i></div>
+          <h3>Dryer Takes 2 Cycles</h3>
+          <p>Heating element, thermostat, or blocked vent. A $140 repair beats a $900 new dryer every time.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>🍽️ Dishwashers</h3>
-          <p>Not cleaning dishes, water not draining, door latch broken, leaking, not starting. Most dishwasher repairs completed in a single visit.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-tool" aria-hidden="true"></i></div>
+          <h3>Oven Not Heating</h3>
+          <p>Igniter, bake element, or control board. Gas or electric — we repair all major oven and range brands.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>🍔 Microwaves</h3>
-          <p>Not heating, turntable not spinning, sparking, display issues. In-home microwave repair — no hauling it to a shop.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-bowl" aria-hidden="true"></i></div>
+          <h3>Dishwasher Not Cleaning</h3>
+          <p>Standing water, dishes still dirty, door won't latch. Most dishwasher repairs are done in one visit.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>🏭 Commercial Appliances</h3>
-          <p>Restaurant refrigerators, commercial washers, commercial ovens. We service small businesses and restaurants across Philadelphia and Delaware County.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-snowflake" aria-hidden="true"></i></div>
+          <h3>Ice Maker Stopped</h3>
+          <p>Water inlet valve, ice maker module, or freezer temp issue. We diagnose and fix all major refrigerator brands.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="sp-section">
+  <section class="section section-dark">
     <div class="container">
-      <div class="sp-kicker">How It Works</div>
-      <h2>Repair in 4 Simple Steps</h2>
-      <div class="sp-steps">
-        <div class="sp-step">
-          <div class="sp-step-num">1</div>
-          <h3>Book Online or Call</h3>
-          <p>Pay $59 to secure your same-day or next-day slot. We confirm your window within the hour.</p>
+      <div class="section-kicker light">What We Repair</div>
+      <h2 class="section-h2 light">Every Major Home Appliance. Every Major Brand.</h2>
+      <p class="section-sub light">Samsung, LG, Whirlpool, GE, Frigidaire, Bosch, KitchenAid, Maytag, Kenmore, Electrolux — all of them.</p>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Refrigerators &amp; Freezers</h3>
+              <div class="svc-price-badge">From $59</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Not cooling, compressor issues, ice maker failures, water dispenser, door seals. All major brands serviced in Philadelphia.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Samsung</span><span class="svc-tag">LG</span><span class="svc-tag">Whirlpool</span><span class="svc-tag">GE</span><span class="svc-tag">Frigidaire</span>
+            </div>
+            <a href="https://buy.stripe.com/28E5kEccKcZy6Ag0HogIo03" class="svc-link">Book Fridge Diagnostic &rarr;</a>
+          </div>
         </div>
-        <div class="sp-step">
-          <div class="sp-step-num">2</div>
-          <h3>We Come to You</h3>
-          <p>David shows up at your home in Philadelphia or surrounding areas. No waiting in a shop — we fix it where it lives.</p>
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1558618047-3c8c76ca7e0b?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Washers &amp; Dryers</h3>
+              <div class="svc-price-badge">From $59</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Not draining, not spinning, leaking, error codes, no heat. Front-load and top-load. All brands repaired same day.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Front Load</span><span class="svc-tag">Top Load</span><span class="svc-tag">All Brands</span><span class="svc-tag">Same Day</span>
+            </div>
+            <a href="https://buy.stripe.com/28E5kEccKcZy6Ag0HogIo03" class="svc-link">Book Diagnostic &rarr;</a>
+          </div>
         </div>
-        <div class="sp-step">
-          <div class="sp-step-num">3</div>
-          <h3>Honest Diagnosis</h3>
-          <p>We tell you exactly what's wrong and what it costs to fix. No pressure. If repair isn't worth it, we say so.</p>
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Ovens &amp; Ranges</h3>
+              <div class="svc-price-badge">From $59</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Gas or electric. Burner not lighting, oven not reaching temp, igniter failures, control board issues. Most repairs $100&ndash;$350.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Gas</span><span class="svc-tag">Electric</span><span class="svc-tag">All Brands</span><span class="svc-tag">Same Visit</span>
+            </div>
+            <a href="https://buy.stripe.com/28E5kEccKcZy6Ag0HogIo03" class="svc-link">Book Oven Diagnostic &rarr;</a>
+          </div>
         </div>
-        <div class="sp-step">
-          <div class="sp-step-num">4</div>
-          <h3>Fixed or Advised</h3>
-          <p>Most repairs done same visit. Parts ordered if needed. $59 diagnostic applied to repair cost if you proceed.</p>
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Dishwashers &amp; More</h3>
+              <div class="svc-price-badge">From $59</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Dishwashers, microwaves, garbage disposals, and commercial appliances for restaurants and businesses across Philadelphia.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Dishwashers</span><span class="svc-tag">Microwaves</span><span class="svc-tag">Commercial</span><span class="svc-tag">All Brands</span>
+            </div>
+            <a href="https://buy.stripe.com/28E5kEccKcZy6Ag0HogIo03" class="svc-link">Book Diagnostic &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="sp-section sp-alt" id="book">
+  <section class="section" id="book">
     <div class="container">
-      <div class="sp-kicker">Transparent Pricing</div>
-      <h2>Know the Price Before We Touch Anything.</h2>
-      <p class="sp-sub">No hourly rate traps. No hidden fees. Parts quoted separately in writing before we order them.</p>
-      <div class="sp-price-grid">
-        <div class="sp-price-card sp-price-featured">
-          <div class="spc-badge">Start Here</div>
-          <div class="spc-name">Appliance Diagnostic</div>
-          <div class="spc-price">$59</div>
-          <div class="spc-desc">We come out, identify the problem, give you a written repair quote. Applied toward your repair if you go ahead.</div>
-          <a href="https://buy.stripe.com/28E5kEccKcZy6Ag0HogIo03" class="spc-btn">Book $59 Diagnostic</a>
+      <div class="section-kicker">Pricing</div>
+      <h2 class="section-h2">Know the Price Before We Touch Anything.</h2>
+      <p class="section-sub">No hourly rate traps. No hidden fees. Parts quoted separately in writing before we order them.</p>
+      <div class="plans-grid">
+        <div class="plan-card plan-featured">
+          <div class="plan-badge">Start Here</div>
+          <div class="plan-name">Appliance Diagnostic</div>
+          <div class="plan-price">$59</div>
+          <div class="plan-desc">We come out, identify the problem, give you a written repair quote. Applied toward your repair if you go ahead.</div>
+          <ul class="plan-features">
+            <li>All major appliance brands</li>
+            <li>Honest repair vs. replace advice</li>
+            <li>Applied to repair cost</li>
+            <li>Same-week availability</li>
+          </ul>
+          <a href="https://buy.stripe.com/28E5kEccKcZy6Ag0HogIo03" class="plan-btn">Book $59 Diagnostic</a>
         </div>
-        <div class="sp-price-card">
-          <div class="spc-name">Appliance Repair</div>
-          <div class="spc-price">$149</div>
-          <div class="spc-desc">Labor for standard repairs. Most appliances fixed same visit. 90-day workmanship warranty.</div>
-          <a href="https://buy.stripe.com/5kQ14o7Wu0cMbUAduagIo04" class="spc-btn">Book Repair</a>
+        <div class="plan-card plan-featured">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-name">Appliance Repair</div>
+          <div class="plan-price">$149</div>
+          <div class="plan-desc">Labor for standard repairs. Most appliances fixed same visit. 90-day workmanship warranty on all labor.</div>
+          <ul class="plan-features">
+            <li>Fridges, washers, dryers &amp; more</li>
+            <li>Samsung, LG, GE, Whirlpool</li>
+            <li>Same-day on most repairs</li>
+            <li>90-day guarantee on labor</li>
+          </ul>
+          <a href="https://buy.stripe.com/5kQ14o7Wu0cMbUAduagIo04" class="plan-btn">Book Appliance Repair</a>
         </div>
-        <div class="sp-price-card">
-          <div class="spc-name">Commercial Appliance</div>
-          <div class="spc-price">Call for Quote</div>
-          <div class="spc-desc">Restaurants, laundromats, small businesses. Priority scheduling available for commercial clients.</div>
-          <a href="tel:+18032217013" class="spc-btn spc-btn-outline">Call for Quote</a>
+        <div class="plan-card">
+          <div class="plan-name">Commercial Appliance</div>
+          <div class="plan-price">From $199</div>
+          <div class="plan-desc">Restaurants, laundromats, small businesses. Walk-in coolers, ice machines, commercial ovens. Priority scheduling.</div>
+          <ul class="plan-features">
+            <li>All commercial kitchen equipment</li>
+            <li>Walk-in coolers &amp; freezers</li>
+            <li>Ice machines</li>
+            <li>Same-day on emergencies</li>
+          </ul>
+          <a href="tel:+18032217013" class="plan-btn plan-btn-outline">Call for Quote</a>
         </div>
-        <div class="sp-price-card">
-          <div class="spc-name">Emergency Same-Day</div>
-          <div class="spc-price">Call Us</div>
-          <div class="spc-desc">Fridge down with food? Flooded washer? We make exceptions for true emergencies. Call and explain — we'll do our best.</div>
-          <a href="tel:+18032217013" class="spc-btn spc-btn-outline">📞 Emergency Call</a>
+      </div>
+      <p class="plans-note">Labor pricing listed. Parts &amp; materials quoted in writing before work begins.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-kicker">Reviews</div>
+      <h2 class="section-h2">Philadelphia Families Saved Hundreds</h2>
+      <div class="reviews-grid">
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"My Samsung fridge stopped cooling on a Friday night. David was there Saturday morning. Fan motor — $180 including parts. A new fridge would've been $1,400. Saved my weekend and my wallet."</p>
+          <div class="review-by">Tanya R. &mdash; West Philadelphia</div>
+          <div class="review-service">Refrigerator Repair</div>
+        </div>
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"LG washer started leaking with three kids at home. David came same day, had the part in his van, fixed it on the spot. $59 diagnostic + $90 labor. Best money I've spent."</p>
+          <div class="review-by">Marcus J. &mdash; Northeast Philadelphia</div>
+          <div class="review-service">Washer Repair</div>
+        </div>
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"About to throw out a dryer that wouldn't heat. David said 'let me look first.' Heating element — $140 total. That dryer is 8 years old and works like new now."</p>
+          <div class="review-by">Sharon &amp; Bill K. &mdash; Delaware County</div>
+          <div class="review-service">Dryer Repair</div>
+        </div>
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Walk-in cooler died Saturday morning before a big weekend. They came that afternoon, had it back up Monday. Saved me thousands in inventory."</p>
+          <div class="review-by">Carmen V. &mdash; West Philadelphia</div>
+          <div class="review-service">Commercial Refrigeration</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="sp-section">
+  <section class="section">
     <div class="container">
-      <div class="sp-kicker">Real Reviews</div>
-      <h2>Philadelphia Families Saved Hundreds with Jimmy Services</h2>
-      <div class="sp-reviews">
-        <div class="sp-review">
-          <div class="sp-stars">★★★★★</div>
-          <p>"My Samsung fridge stopped cooling on a Friday night. Called David, he was there Saturday morning. Turned out to be a fan motor — cost me $180 including parts. A new fridge would've been $1,400. He saved my weekend and my wallet."</p>
-          <div class="sp-reviewer">— Tanya R. · West Philadelphia, PA</div>
-        </div>
-        <div class="sp-review">
-          <div class="sp-stars">★★★★★</div>
-          <p>"Our LG washer started leaking everywhere right before laundry day with three kids. David came the same day, diagnosed it in 20 minutes, had the part in his van, and fixed it on the spot. $59 diagnostic + $90 labor. Best money I've spent."</p>
-          <div class="sp-reviewer">— Marcus J. · Northeast Philadelphia, PA</div>
-        </div>
-        <div class="sp-review">
-          <div class="sp-stars">★★★★★</div>
-          <p>"I was about to throw out a dryer that wouldn't heat. David said 'let me look first.' Heating element — $140 total. That dryer is 8 years old and now works like new. The man knows his stuff."</p>
-          <div class="sp-reviewer">— Sharon & Bill K. · Delaware County, PA</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="sp-section sp-alt">
-    <div class="container sp-faq-wrap">
-      <div class="sp-kicker">FAQ</div>
-      <h2>Appliance Repair Questions Philadelphia Customers Ask</h2>
+      <div class="section-kicker">FAQ</div>
+      <h2 class="section-h2">Appliance Repair Questions</h2>
       <div class="faq-list">
-        <details class="faq-item"><summary>Is it worth repairing a refrigerator or should I replace it?</summary><p>The general rule: if the repair costs less than 50% of a replacement and the appliance is under 10–12 years old, repair it. David will give you an honest assessment. He loses no money either way — he makes the same margin on a repair as on the referral for a new one, so there's no pressure.</p></details>
-        <details class="faq-item"><summary>What appliance brands do you service?</summary><p>All major brands: Samsung, LG, Whirlpool, GE, Frigidaire, Bosch, KitchenAid, Maytag, Kenmore, Electrolux, Viking, and more. If it plugs in or runs on gas and lives in your home or business, we service it.</p></details>
-        <details class="faq-item"><summary>Do you carry parts on the van?</summary><p>We stock the most common parts for common failures — motors, heating elements, pump assemblies, belts, and capacitors. Many repairs are done same visit. If we need to order a part, we schedule a return visit as soon as it arrives, typically 1–2 days.</p></details>
-        <details class="faq-item"><summary>Is the $59 diagnostic fee applied to the repair?</summary><p>Yes. If you decide to proceed with the repair, the $59 diagnostic fee is credited toward your repair total. You only pay the diagnostic if you choose not to repair.</p></details>
-        <details class="faq-item"><summary>Do you repair commercial refrigeration?</summary><p>Yes — walk-in coolers, display cases, commercial ice machines, and prep table units. We serve restaurants, delis, and small businesses across Philadelphia and Delaware County.</p></details>
+        <details class="faq-item"><summary>Is it worth repairing or should I replace?</summary><p>If the repair costs less than 50% of a replacement and the appliance is under 10–12 years old, repair it. We give you an honest assessment — we make the same margin either way, so there's no pressure.</p></details>
+        <details class="faq-item"><summary>What appliance brands do you service?</summary><p>All major brands: Samsung, LG, Whirlpool, GE, Frigidaire, Bosch, KitchenAid, Maytag, Kenmore, Electrolux, Viking, and more.</p></details>
+        <details class="faq-item"><summary>Do you carry parts on the van?</summary><p>We stock the most common parts — motors, heating elements, pump assemblies, belts, and capacitors. Many repairs are done same visit. If we need to order a part, we return within 1–2 days.</p></details>
+        <details class="faq-item"><summary>Is the $59 diagnostic applied to the repair?</summary><p>Yes. If you decide to proceed, the $59 is credited toward your repair total. You only pay it if you choose not to repair.</p></details>
+        <details class="faq-item"><summary>Do you repair commercial appliances?</summary><p>Yes — walk-in coolers, display cases, commercial ice machines, and prep units. We serve restaurants and small businesses across Philadelphia and Delaware County.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- BOTTOM CTA -->
-  <section class="sp-bottom-cta">
-    <div class="container">
+  <section class="bottom-cta">
+    <div class="bottom-cta-bg"></div>
+    <div class="bottom-cta-overlay"></div>
+    <div class="container bottom-cta-content">
       <h2>Don't Buy New. Call Jimmy Services First.</h2>
-      <p>$59 diagnostic. Same-day available. Philadelphia's most trusted appliance repair team.</p>
-      <div class="sp-bottom-btns">
-        <a href="tel:+18032217013" class="sp-cta-primary"><span>📞</span><div><strong>(803) 221-7013</strong><small>Call Now</small></div></a>
-        <a href="index.html#schedule" class="sp-cta-secondary">Schedule Online →</a>
-      </div>
+      <p>$59 diagnostic. Same-day available. Philadelphia's most trusted appliance repair.</p>
+      <a href="tel:+18032217013" class="bottom-cta-btn">Call (803) 221-7013</a>
+      <p class="bottom-cta-sub">Mon&ndash;Sat 7am&ndash;8pm &middot; Book online at jimmyservice.com</p>
     </div>
   </section>
 
@@ -267,8 +317,9 @@
     <div class="container footer-wrap">
       <div class="footer-brand">
         <div class="footer-logo">JIMMY SERVICES</div>
-        <p>HVAC · Plumbing · Electrical · Masonry · Appliance · Carpentry</p>
-        <p>👨‍👩‍👧 Family Owned · Philadelphia, PA · <em class="footer-tagline">"We got you."</em></p>
+        <p>Licensed &amp; insured contractor serving Philadelphia, PA and surrounding counties.</p>
+        <p>HVAC &middot; Plumbing &middot; Electrical &middot; Masonry &middot; Appliance Repair &middot; Carpentry</p>
+        <p>Mon&ndash;Sat: 7am &ndash; 8pm</p>
       </div>
       <div class="footer-links">
         <strong>Service Pages</strong>
@@ -277,14 +328,23 @@
         <a href="plumber-philadelphia.html">Plumber Philadelphia</a>
         <a href="ev-charger-philadelphia.html">EV Charger Installation</a>
       </div>
+      <div class="footer-links">
+        <strong>Services</strong>
+        <a href="index.html#services">All Services</a>
+        <a href="index.html#plans">Pricing</a>
+        <a href="index.html#areas">Service Areas</a>
+        <a href="index.html#reviews">Reviews</a>
+      </div>
       <div class="footer-contact">
         <strong>Contact</strong>
         <a href="tel:+18032217013">(803) 221-7013</a>
         <a href="mailto:david@jimmyservice.com">david@jimmyservice.com</a>
-        <p>Mon–Sat: 7am–8pm</p>
+        <p>Philadelphia, PA &amp; Surrounding Areas</p>
       </div>
     </div>
-    <div class="footer-bottom"><div class="container">&copy; 2025 Jimmy Services · Licensed & Insured · Philadelphia, PA</div></div>
+    <div class="footer-bottom">
+      <div class="container">&copy; 2025 Jimmy Services &middot; Licensed &amp; Insured &middot; Philadelphia, PA</div>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>

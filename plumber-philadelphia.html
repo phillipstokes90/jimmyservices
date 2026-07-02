@@ -6,7 +6,8 @@
   <title>Plumber Philadelphia PA | Emergency Plumbing | Jimmy Services</title>
   <meta name="description" content="Burst pipe? Drain clogged? Water heater out? Jimmy Services handles emergency plumbing in Philadelphia PA. Same-day service. Licensed & insured. Call (803) 221-7013." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://jimmyservice.com/plumber-philadelphia" />
+  <meta name="google-site-verification" content="N_kxR-XTdTbGt_gOEmPHeKf9IIF_7tyPon5Lat2CoCs" />
+  <link rel="canonical" href="https://jimmyservice.com/plumber-philadelphia.html" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -26,10 +27,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="service-page.css" />
 </head>
 <body>
+
+  <div class="sticky-bar">
+    <div class="sticky-bar-inner">
+      <span><strong>Emergency Plumbing</strong> — Same-Day Service in Philadelphia</span>
+      <div class="sticky-bar-ctas">
+        <a href="tel:+18032217013" class="sticky-call">Call Now</a>
+        <a href="#book" class="sticky-book">Book Online</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="tel:+18032217013" class="mobile-float-btn" aria-label="Call Jimmy Services">Call Now</a>
 
   <nav id="navbar">
     <div class="container nav-inner">
@@ -37,213 +50,264 @@
       <ul class="nav-links">
         <li><a href="index.html#services">All Services</a></li>
         <li><a href="index.html#plans">Pricing</a></li>
-        <li><a href="index.html#about">About Us</a></li>
         <li><a href="index.html#areas">Service Areas</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
       </ul>
-      <a href="tel:+18032217013" class="btn-call-nav">📞 (803) 221-7013</a>
+      <a href="tel:+18032217013" class="btn-call-nav">(803) 221-7013</a>
       <button class="hamburger" id="hamburger">&#9776;</button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
       <a href="index.html">Home</a>
-      <a href="index.html#services">All Services</a>
-      <a href="tel:+18032217013" class="mc-call">📞 (803) 221-7013</a>
+      <a href="index.html#services" onclick="closeMobile()">All Services</a>
+      <a href="#book" onclick="closeMobile()">Book Online</a>
+      <a href="tel:+18032217013" class="mc-call">(803) 221-7013</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="sp-hero">
-    <div class="sp-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1400&fit=crop&auto=format')"></div>
-    <div class="sp-hero-overlay"></div>
-    <div class="container sp-hero-content">
-      <div class="sp-hero-text">
-        <div class="sp-breadcrumb"><a href="index.html">Jimmy Services</a> › Plumber Philadelphia</div>
-        <div class="sp-tag">💧 Plumbing · Philadelphia, PA</div>
-        <h1>Water's Leaking.<br/>Every Minute Costs You More.</h1>
-        <p>A burst pipe. A slab leak. Sewage backup. These aren't problems you schedule for next week. Jimmy Services shows up same day — because in Philadelphia, water damage is a $10,000 problem waiting to happen.</p>
-        <div class="sp-hero-ctas">
-          <a href="tel:+18032217013" class="sp-cta-primary">
-            <span>📞</span>
-            <div><strong>(803) 221-7013</strong><small>Call Now — Same Day Available</small></div>
-          </a>
-          <a href="#book" class="sp-cta-secondary">Book Online →</a>
-        </div>
-        <div class="sp-trust-row">
-          <span>✅ Licensed & Insured</span>
-          <span>⭐ 5-Star Rated</span>
-          <span>🔧 All Plumbing Work</span>
-          <span>🏠 Residential & Commercial</span>
-        </div>
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&fit=crop&auto=format&q=80')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Plumbing &nbsp;&middot;&nbsp; Philadelphia, PA &nbsp;&middot;&nbsp; Same-Day Available</div>
+      <h1>Water's Leaking.<br/><em>Every Minute Costs You More.</em></h1>
+      <p>A burst pipe, sewage backup, or water heater failure isn't something you schedule for next week. Jimmy Services shows up same day — because water damage is a $10,000 problem waiting to happen.</p>
+      <div class="hero-ctas">
+        <a href="tel:+18032217013" class="cta-primary">Call (803) 221-7013</a>
+        <a href="#book" class="cta-secondary">Book Online</a>
+      </div>
+      <div class="hero-trust">
+        <span><strong>Licensed &amp; Insured</strong></span>
+        <span><strong>5-Star Rated</strong> &nbsp;&middot;&nbsp; 87 Reviews</span>
+        <span><strong>All Plumbing Work</strong></span>
+        <span><strong>Same-Day</strong> Available</span>
       </div>
     </div>
   </section>
 
-  <!-- URGENCY -->
-  <div class="sp-urgency">
-    <div class="container">💧 <strong>Plumbing emergency in Philadelphia?</strong> Shut the water main and call us immediately. <a href="tel:+18032217013">(803) 221-7013</a></div>
+  <div class="stats-bar">
+    <div class="stat-item"><strong>Same Day</strong><small>Emergency Response</small></div>
+    <div class="stat-item"><strong>20+</strong><small>Years Experience</small></div>
+    <div class="stat-item"><strong>5.0</strong><small>Star Rating</small></div>
+    <div class="stat-item"><strong>Residential &amp; Commercial</strong><small>Licensed</small></div>
   </div>
 
-  <!-- PAIN POINTS -->
-  <section class="sp-section">
+  <section class="section">
     <div class="container">
-      <div class="sp-kicker">Sound Familiar?</div>
-      <h2>Plumbing Problems That Can't Wait</h2>
-      <div class="sp-pain-grid">
-        <div class="sp-pain">💧<p>Burst or leaking pipes causing water damage</p></div>
-        <div class="sp-pain">🚿<p>No hot water — water heater failed</p></div>
-        <div class="sp-pain">🚽<p>Toilet backed up or overflowing</p></div>
-        <div class="sp-pain">🌊<p>Basement flooding or sewage backup</p></div>
-        <div class="sp-pain">🚰<p>Drain clogged — sink, tub, or floor drain</p></div>
-        <div class="sp-pain">💨<p>Low water pressure throughout the house</p></div>
-      </div>
-      <p class="sp-pain-note">In older Philadelphia rowhomes, plumbing problems compound fast. Don't wait — call before it gets worse.</p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="sp-section sp-dark">
-    <div class="container">
-      <div class="sp-kicker light">What We Do</div>
-      <h2 class="light">Full-Service Plumbing for Philadelphia Homes & Businesses</h2>
-      <div class="sp-services-grid">
-        <div class="sp-service-item">
-          <h3>🚨 Emergency Plumbing</h3>
-          <p>Burst pipes, active leaks, sewage backup, flooding. We prioritize true emergencies. Call first — we'll get to you as fast as humanly possible.</p>
+      <div class="section-kicker">Sound Familiar?</div>
+      <h2 class="section-h2">Plumbing Problems That Can't Wait</h2>
+      <p class="section-sub">In older Philadelphia rowhomes, plumbing problems compound fast. Don't wait — call before it gets worse.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-droplet" aria-hidden="true"></i></div>
+          <h3>Burst or Leaking Pipes</h3>
+          <p>Shut the main water valve and call us immediately. We prioritize active leaks — every minute of water damage adds up.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>🚿 Water Heater Repair & Install</h3>
-          <p>No hot water? Rusty water? Leaking tank? We repair or replace all water heater types — tank, tankless, gas, and electric. Same-day hot water restoration available.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-flame" aria-hidden="true"></i></div>
+          <h3>No Hot Water</h3>
+          <p>Water heater failed. We repair or replace same day — tank, tankless, gas, and electric. Hot water restored same visit in most cases.</p>
         </div>
-        <div class="sp-service-item sp-service-hot">
-          <div class="sp-hot-tag">💸 High Demand</div>
-          <h3>🚰 Drain Cleaning</h3>
-          <p>Slow drains, full blockages, recurring clogs. Kitchen grease, hair traps, root intrusion — we clear it all. Camera inspection available for persistent problems.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-toilet-paper" aria-hidden="true"></i></div>
+          <h3>Toilet Backed Up</h3>
+          <p>Toilet overflowing or won't flush. We clear blockages, repair fill valves, and replace toilets same day across Philadelphia.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>💧 Pipe Repair & Replacement</h3>
-          <p>Burst pipes, corroded galvanized pipes, pinhole leaks. Philadelphia's aging housing stock means lots of old pipes — we've seen it all and fixed it all.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
+          <h3>Basement Flooding</h3>
+          <p>Sewage backup or water intrusion in the basement. We diagnose the source, clear the line, and advise on prevention.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>🏠 Fixtures & Installation</h3>
-          <p>Faucets, toilets, garbage disposals, dishwasher hookups, washing machine connections, outdoor hose bibs. We install it right the first time.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-ripple" aria-hidden="true"></i></div>
+          <h3>Clogged Drains</h3>
+          <p>Sink, tub, shower, or floor drain backing up. We clear it same day — no recurring snake-and-hope fixes.</p>
         </div>
-        <div class="sp-service-item">
-          <h3>🏢 Commercial Plumbing</h3>
-          <p>Restaurants, offices, retail spaces. Grease traps, commercial water heaters, floor drains, backflow prevention. Licensed commercial work across Philadelphia County.</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="ti ti-gauge" aria-hidden="true"></i></div>
+          <h3>Low Water Pressure</h3>
+          <p>Whole-house low pressure usually signals a main line issue or pressure regulator failure. We diagnose and fix the root cause.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY US -->
-  <section class="sp-section">
+  <section class="section section-dark">
     <div class="container">
-      <div class="sp-kicker">Why Jimmy Services</div>
-      <h2>The Plumber Philadelphia Actually Trusts</h2>
-      <p class="sp-sub">There are a lot of plumbers in Philadelphia. Here's why families and businesses keep calling us back.</p>
-      <div class="sp-why-grid" style="background: var(--dark2);">
-        <div class="sp-why-item">
-          <div class="sp-why-icon">🏠</div>
-          <h3 style="color:#fff">Family-Owned</h3>
-          <p>David McCotter has been doing this for over 20 years. When you call, you talk to the person who shows up. No dispatch center, no strangers.</p>
+      <div class="section-kicker light">What We Do</div>
+      <h2 class="section-h2 light">Full-Service Plumbing for Philadelphia Homes &amp; Businesses</h2>
+      <p class="section-sub light">Residential and commercial. Quoted before we start. No surprise bills.</p>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Emergency Plumbing</h3>
+              <div class="svc-price-badge">Same Day</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Burst pipes, active leaks, sewage backup, flooding. We prioritize true emergencies and respond as fast as humanly possible.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Burst Pipes</span><span class="svc-tag">Sewage</span><span class="svc-tag">Flooding</span><span class="svc-tag">Emergency</span>
+            </div>
+            <a href="tel:+18032217013" class="svc-link">Call for Emergency &rarr;</a>
+          </div>
         </div>
-        <div class="sp-why-item">
-          <div class="sp-why-icon">💰</div>
-          <h3 style="color:#fff">No Surprise Bills</h3>
-          <p>We quote before we touch anything. Ever. Parts are listed separately in writing. The price we quote is the price you pay.</p>
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Water Heater Repair &amp; Install</h3>
+              <div class="svc-price-badge">From $149</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>No hot water, rusty water, leaking tank. We repair or replace — tank, tankless, gas, and electric. Same-day restoration available.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Tank</span><span class="svc-tag">Tankless</span><span class="svc-tag">Gas &amp; Electric</span><span class="svc-tag">Same Day</span>
+            </div>
+            <a href="https://buy.stripe.com/28EeVe1y62kU4s8duagIo05" class="svc-link">Book Service &rarr;</a>
+          </div>
         </div>
-        <div class="sp-why-item">
-          <div class="sp-why-icon">⚡</div>
-          <h3 style="color:#fff">Same-Day Response</h3>
-          <p>Plumbing waits for no one. We answer the phone and prioritize your emergency — not your place in a 3-day queue.</p>
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Drain Cleaning</h3>
+              <div class="svc-price-badge">From $149</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Slow drains, full blockages, recurring clogs. Kitchen grease, hair traps, root intrusion — we clear it all with camera inspection available.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Kitchen</span><span class="svc-tag">Bathroom</span><span class="svc-tag">Main Line</span><span class="svc-tag">Camera Inspection</span>
+            </div>
+            <a href="https://buy.stripe.com/28EeVe1y62kU4s8duagIo05" class="svc-link">Book Drain Cleaning &rarr;</a>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Fixtures &amp; Pipe Repair</h3>
+              <div class="svc-price-badge">From $149</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Faucets, toilets, garbage disposals, pipe leaks and replacements. Philadelphia's aging rowhomes — we've seen it all and fixed it all.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Faucets</span><span class="svc-tag">Toilets</span><span class="svc-tag">Pipe Repair</span><span class="svc-tag">Disposals</span>
+            </div>
+            <a href="https://buy.stripe.com/28EeVe1y62kU4s8duagIo05" class="svc-link">Book Service &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="sp-section sp-alt" id="book">
+  <section class="section" id="book">
     <div class="container">
-      <div class="sp-kicker">Pricing</div>
-      <h2>Fair, Transparent Plumbing Rates</h2>
-      <p class="sp-sub">Most plumbers won't quote until they're standing in your home with tools out. We're different.</p>
-      <div class="sp-price-grid">
-        <div class="sp-price-card sp-price-featured">
-          <div class="spc-badge">Most Booked</div>
-          <div class="spc-name">Plumbing Service</div>
-          <div class="spc-price">$149</div>
-          <div class="spc-desc">Labor for standard plumbing work. Includes drain clearing, fixture replacement, minor pipe repair. Parts extra, quoted upfront.</div>
-          <a href="https://buy.stripe.com/28EeVe1y62kU4s8duagIo05" class="spc-btn">Book Now</a>
+      <div class="section-kicker">Pricing</div>
+      <h2 class="section-h2">Fair, Transparent Plumbing Rates.</h2>
+      <p class="section-sub">Most plumbers won't quote until they're standing in your home with tools out. We quote before we start — every time.</p>
+      <div class="plans-grid">
+        <div class="plan-card plan-featured">
+          <div class="plan-badge">Most Booked</div>
+          <div class="plan-name">Plumbing Service</div>
+          <div class="plan-price">$149</div>
+          <div class="plan-desc">Labor for standard plumbing work — drain clearing, fixture replacement, minor pipe repair. Parts quoted upfront.</div>
+          <ul class="plan-features">
+            <li>Drain cleaning &amp; clearing</li>
+            <li>Fixture repair &amp; installation</li>
+            <li>Minor pipe repair</li>
+            <li>Quoted before we start</li>
+          </ul>
+          <a href="https://buy.stripe.com/28EeVe1y62kU4s8duagIo05" class="plan-btn">Book Plumbing Service</a>
         </div>
-        <div class="sp-price-card">
-          <div class="spc-name">Water Heater Install</div>
-          <div class="spc-price">Call for Quote</div>
-          <div class="spc-desc">Flat quote based on unit size and type. We can often install the same day you call.</div>
-          <a href="tel:+18032217013" class="spc-btn spc-btn-outline">Get Quote</a>
+        <div class="plan-card">
+          <div class="plan-name">Water Heater Install</div>
+          <div class="plan-price">Call for Quote</div>
+          <div class="plan-desc">Flat quote based on unit size and type. Same-day installation available in most cases.</div>
+          <ul class="plan-features">
+            <li>Tank &amp; tankless</li>
+            <li>Gas &amp; electric</li>
+            <li>Same-day available</li>
+            <li>All major brands</li>
+          </ul>
+          <a href="tel:+18032217013" class="plan-btn plan-btn-outline">Get Quote</a>
         </div>
-        <div class="sp-price-card">
-          <div class="spc-name">Emergency Plumbing</div>
-          <div class="spc-price">Call Us</div>
-          <div class="spc-desc">Active leaks, burst pipes, sewage backup. We prioritize emergencies. Rates are fair — never price-gouged.</div>
-          <a href="tel:+18032217013" class="spc-btn spc-btn-outline">📞 Emergency</a>
+        <div class="plan-card">
+          <div class="plan-name">Commercial Plumbing</div>
+          <div class="plan-price">From $199</div>
+          <div class="plan-desc">Restaurants, retail, offices. Grease traps, commercial water heaters, backflow prevention. Licensed in Philadelphia County.</div>
+          <ul class="plan-features">
+            <li>Grease trap service</li>
+            <li>Commercial water heaters</li>
+            <li>Backflow prevention</li>
+            <li>Priority scheduling</li>
+          </ul>
+          <a href="tel:+18032217013" class="plan-btn plan-btn-outline">Get Quote</a>
         </div>
-        <div class="sp-price-card">
-          <div class="spc-name">Commercial Plumbing</div>
-          <div class="spc-price">Call for Quote</div>
-          <div class="spc-desc">Restaurants, retail, offices. Priority scheduling. Licensed for commercial work in Philadelphia County.</div>
-          <a href="tel:+18032217013" class="spc-btn spc-btn-outline">Get Quote</a>
+      </div>
+      <p class="plans-note">Labor pricing listed. Parts &amp; materials quoted in writing before work begins.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-kicker">Reviews</div>
+      <h2 class="section-h2">Philadelphia Homeowners on Our Plumbing</h2>
+      <div class="reviews-grid">
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Pipe burst at 7am on a Thursday. There by 9:30, fixed and cleaned up by noon. He even swept the floor before leaving. Absolute professionalism."</p>
+          <div class="review-by">Greg &amp; Lisa M. &mdash; South Philadelphia</div>
+          <div class="review-service">Emergency Plumbing</div>
+        </div>
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Sewer smell in the basement. David came out, figured out it was a dry trap in the floor drain, explained everything, fixed it in 20 minutes. Didn't try to upsell me on anything."</p>
+          <div class="review-by">Denise C. &mdash; Germantown</div>
+          <div class="review-service">Drain Inspection</div>
+        </div>
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Needed a full bathroom roughed in for a basement conversion. Quoted fair, showed up on time every day, passed inspection on the first try. Referred him to three neighbors."</p>
+          <div class="review-by">James T. &mdash; Montgomery County</div>
+          <div class="review-service">Bathroom Plumbing</div>
+        </div>
+        <div class="review">
+          <div class="review-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Hot water heater went out on a Sunday. Called at 8am, new unit installed by 2pm. Fair price, no weekend surcharge. Exactly what you want in an emergency."</p>
+          <div class="review-by">Nicole B. &mdash; Bucks County</div>
+          <div class="review-service">Water Heater Replacement</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="sp-section">
+  <section class="section">
     <div class="container">
-      <div class="sp-kicker">Real Reviews</div>
-      <h2>Philadelphia Homeowners on Jimmy Services Plumbing</h2>
-      <div class="sp-reviews">
-        <div class="sp-review">
-          <div class="sp-stars">★★★★★</div>
-          <p>"Pipe burst in our basement at 7am on a Thursday. David was there by 9:30am. Had it fixed and cleaned up by noon. He even swept up before he left. The man is a professional in every sense of the word."</p>
-          <div class="sp-reviewer">— Greg & Lisa M. · South Philadelphia, PA</div>
-        </div>
-        <div class="sp-review">
-          <div class="sp-stars">★★★★★</div>
-          <p>"Called about a sewer smell coming from the basement. David came out, figured out it was a dry trap in a floor drain, explained everything to me, and fixed it in 20 minutes. Didn't try to upsell me on anything. Refreshing."</p>
-          <div class="sp-reviewer">— Denise C. · Germantown, Philadelphia PA</div>
-        </div>
-        <div class="sp-review">
-          <div class="sp-stars">★★★★★</div>
-          <p>"We needed a full bathroom roughed in for a basement conversion. David quoted us fair, showed up on time every day, and passed inspection on the first try. We've referred him to three neighbors already."</p>
-          <div class="sp-reviewer">— James T. · Montgomery County, PA</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="sp-section sp-alt">
-    <div class="container sp-faq-wrap">
-      <div class="sp-kicker">FAQ</div>
-      <h2>Plumbing Questions Philadelphia Homeowners Ask</h2>
+      <div class="section-kicker">FAQ</div>
+      <h2 class="section-h2">Plumbing Questions Philadelphia Homeowners Ask</h2>
       <div class="faq-list">
-        <details class="faq-item"><summary>What should I do if I have a burst pipe?</summary><p>Turn off your main water shutoff valve immediately — it's usually in your basement or utility area. Then call us at (803) 221-7013. While you wait: mop up standing water if safe to do so, and move valuables away from the wet area. Don't use electrical outlets near the water.</p></details>
-        <details class="faq-item"><summary>Do you service older Philadelphia rowhomes?</summary><p>Absolutely — most of our work is in older Philly housing stock. We're very familiar with galvanized pipes, cast iron drain lines, and the quirks of older construction. We know what to look for and how to fix it without tearing up your home unnecessarily.</p></details>
-        <details class="faq-item"><summary>Can you replace my water heater same day?</summary><p>Often yes. We stock common tank water heater sizes in the van. Tankless units typically require a scheduled install (next day in most cases). Call us and we'll tell you what we can do based on what we have available.</p></details>
-        <details class="faq-item"><summary>Do you handle commercial plumbing?</summary><p>Yes. We're licensed for commercial work in Philadelphia County and surrounding areas. Grease traps, commercial water heaters, backflow prevention, floor drains, and multi-unit residential buildings. Call for a quote.</p></details>
+        <details class="faq-item"><summary>What should I do if I have a burst pipe?</summary><p>Turn off your main water shutoff valve immediately — usually in your basement or utility area. Then call us at (803) 221-7013. While you wait, mop up standing water if safe and move valuables away from the wet area.</p></details>
+        <details class="faq-item"><summary>Do you service older Philadelphia rowhomes?</summary><p>Absolutely — most of our work is in older Philly housing stock. We're very familiar with galvanized pipes, cast iron drain lines, and older construction quirks. We know what to look for and how to fix it without tearing up your home unnecessarily.</p></details>
+        <details class="faq-item"><summary>Can you replace my water heater same day?</summary><p>Often yes. We stock common tank water heater sizes on the van. Tankless units typically require a next-day scheduled install. Call and we'll tell you based on what we have available.</p></details>
+        <details class="faq-item"><summary>Do you handle commercial plumbing?</summary><p>Yes. Licensed for commercial work in Philadelphia County. Grease traps, commercial water heaters, backflow prevention, floor drains, multi-unit residential buildings. Call for a quote.</p></details>
+        <details class="faq-item"><summary>Do you give free estimates?</summary><p>For standard jobs, we can often give a phone estimate. For complex or emergency jobs, we charge a standard service call which is applied toward the repair if you proceed.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- BOTTOM CTA -->
-  <section class="sp-bottom-cta">
-    <div class="container">
+  <section class="bottom-cta">
+    <div class="bottom-cta-bg"></div>
+    <div class="bottom-cta-overlay"></div>
+    <div class="container bottom-cta-content">
       <h2>Plumbing Problem? Call Now.</h2>
-      <p>Same-day service in Philadelphia and surrounding counties. Don't let water damage turn a small fix into a big one.</p>
-      <div class="sp-bottom-btns">
-        <a href="tel:+18032217013" class="sp-cta-primary"><span>📞</span><div><strong>(803) 221-7013</strong><small>Call Now</small></div></a>
-        <a href="index.html#schedule" class="sp-cta-secondary">Schedule Online →</a>
-      </div>
+      <p>Same-day service in Philadelphia and surrounding counties.<br/>Don't let water damage turn a small fix into a big one.</p>
+      <a href="tel:+18032217013" class="bottom-cta-btn">Call (803) 221-7013</a>
+      <p class="bottom-cta-sub">Mon&ndash;Sat 7am&ndash;8pm &middot; Book online at jimmyservice.com</p>
     </div>
   </section>
 
@@ -251,8 +315,9 @@
     <div class="container footer-wrap">
       <div class="footer-brand">
         <div class="footer-logo">JIMMY SERVICES</div>
-        <p>HVAC · Plumbing · Electrical · Masonry · Appliance · Carpentry</p>
-        <p>👨‍👩‍👧 Family Owned · Philadelphia, PA · <em class="footer-tagline">"We got you."</em></p>
+        <p>Licensed &amp; insured contractor serving Philadelphia, PA and surrounding counties.</p>
+        <p>HVAC &middot; Plumbing &middot; Electrical &middot; Masonry &middot; Appliance Repair &middot; Carpentry</p>
+        <p>Mon&ndash;Sat: 7am &ndash; 8pm</p>
       </div>
       <div class="footer-links">
         <strong>Service Pages</strong>
@@ -261,14 +326,23 @@
         <a href="plumber-philadelphia.html">Plumber Philadelphia</a>
         <a href="ev-charger-philadelphia.html">EV Charger Installation</a>
       </div>
+      <div class="footer-links">
+        <strong>Services</strong>
+        <a href="index.html#services">All Services</a>
+        <a href="index.html#plans">Pricing</a>
+        <a href="index.html#areas">Service Areas</a>
+        <a href="index.html#reviews">Reviews</a>
+      </div>
       <div class="footer-contact">
         <strong>Contact</strong>
         <a href="tel:+18032217013">(803) 221-7013</a>
         <a href="mailto:david@jimmyservice.com">david@jimmyservice.com</a>
-        <p>Mon–Sat: 7am–8pm</p>
+        <p>Philadelphia, PA &amp; Surrounding Areas</p>
       </div>
     </div>
-    <div class="footer-bottom"><div class="container">&copy; 2025 Jimmy Services · Licensed & Insured · Philadelphia, PA</div></div>
+    <div class="footer-bottom">
+      <div class="container">&copy; 2025 Jimmy Services &middot; Licensed &amp; Insured &middot; Philadelphia, PA</div>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>
