@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <title>HVAC, Plumbing, Electrical & Appliance Repair Philadelphia PA | Jimmy Services</title>
   <meta name="description" content="HVAC repair, plumbing, electrical, masonry, appliance repair and carpentry in Philadelphia, PA. Commercial & residential. Licensed & insured. Same-day available. Call (803) 221-7013." />
   <meta name="keywords" content="HVAC repair Philadelphia PA, plumber Philadelphia PA, electrician Philadelphia PA, appliance repair Philadelphia PA, masonry Philadelphia PA, handyman Philadelphia, commercial HVAC Bucks County, plumber Delaware County, contractor Montgomery County PA" />
@@ -15,6 +24,7 @@
   <meta property="og:description" content="HVAC, plumbing, electrical, masonry, appliance repair and carpentry. Philadelphia, PA & surrounding areas. Licensed & insured. Call (803) 221-7013." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jimmyservice.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&fit=crop&auto=format&q=80" />
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -54,6 +64,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&fit=crop&auto=format&q=80" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -189,7 +201,7 @@
               <span class="svc-tag">Outlets</span>
               <span class="svc-tag">Rewiring</span>
             </div>
-            <a href="ev-charger-philadelphia.html" class="svc-link">View Electrical Services &rarr;</a>
+            <a href="electrician-philadelphia.html" class="svc-link">View Electrical Services &rarr;</a>
           </div>
         </div>
 
@@ -210,6 +222,46 @@
               <span class="svc-tag">All Brands</span>
             </div>
             <a href="appliance-repair-philadelphia.html" class="svc-link">View Appliance Services &rarr;</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Masonry</h3>
+              <div class="svc-price-badge">Call for Quote</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Patios, walkways, steps, retaining walls, chimney repair. Brick, block, and stone work built to last through Philadelphia winters.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Steps &amp; Stoops</span>
+              <span class="svc-tag">Chimney Repair</span>
+              <span class="svc-tag">Retaining Walls</span>
+              <span class="svc-tag">Patios</span>
+            </div>
+            <a href="masonry-philadelphia.html" class="svc-link">View Masonry Services &rarr;</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&fit=crop&auto=format&q=80')">
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-label">
+              <h3>Carpentry</h3>
+              <div class="svc-price-badge">Call for Quote</div>
+            </div>
+          </div>
+          <div class="svc-body">
+            <p>Decks, fences, custom cabinets, trim, and flooring. Finish carpentry built by a craftsman, not a subcontractor.</p>
+            <div class="svc-tags">
+              <span class="svc-tag">Decks &amp; Fences</span>
+              <span class="svc-tag">Cabinets</span>
+              <span class="svc-tag">Flooring</span>
+              <span class="svc-tag">Trim</span>
+            </div>
+            <a href="carpentry-philadelphia.html" class="svc-link">View Carpentry Services &rarr;</a>
           </div>
         </div>
 
@@ -335,7 +387,7 @@
             <li>Chimney repair</li>
             <li>Retaining walls</li>
           </ul>
-          <a href="tel:+18032217013" class="plan-btn plan-btn-outline">Call for Quote</a>
+          <a href="masonry-philadelphia.html" class="plan-btn plan-btn-outline">View Masonry Services</a>
         </div>
 
         <div class="plan-card">
@@ -348,7 +400,7 @@
             <li>Flooring installation</li>
             <li>Door &amp; window framing</li>
           </ul>
-          <a href="tel:+18032217013" class="plan-btn plan-btn-outline">Call for Quote</a>
+          <a href="carpentry-philadelphia.html" class="plan-btn plan-btn-outline">View Carpentry Services</a>
         </div>
       </div>
 
@@ -620,9 +672,12 @@
       <div class="footer-links">
         <strong>Service Pages</strong>
         <a href="hvac-repair-philadelphia.html">HVAC Repair Philadelphia</a>
-        <a href="appliance-repair-philadelphia.html">Appliance Repair Philadelphia</a>
         <a href="plumber-philadelphia.html">Plumber Philadelphia</a>
+        <a href="electrician-philadelphia.html">Electrician Philadelphia</a>
+        <a href="appliance-repair-philadelphia.html">Appliance Repair Philadelphia</a>
         <a href="ev-charger-philadelphia.html">EV Charger Installation</a>
+        <a href="masonry-philadelphia.html">Masonry Philadelphia</a>
+        <a href="carpentry-philadelphia.html">Carpentry Philadelphia</a>
       </div>
       <div class="footer-contact">
         <strong>Contact</strong>
