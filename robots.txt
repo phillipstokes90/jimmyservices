@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jimmyservices.com/sitemap.xml
+Sitemap: https://jimmyservice.com/sitemap.xml
